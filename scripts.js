@@ -24,31 +24,21 @@ var update = function () {
 
 // Updates every second
 setInterval(update, 1000);
-
-// Save Button Functions
 var saveBtnEl = $(".saveBtn");
 
-// Checking Functionality 
-$("button").on("click", function (event) {
-    alert("Button Clicked!");
+saveBtnEl.on("click", function (event) {
     event.preventDefault();
-    var input = $("event-recorder").val();
-    console.log(input);
-    localStorage.setItem("event-recorder", JSON.stringify(event - recorder));
 
-    saveBtn.on("click", function (event) {
-        event.preventDefault();
-        var savedInfo = $(this).attr("data-time");
-        //console log click on THIS specific button in this class
-        console.log(savedInfo);
-        //descriptionTarget locates the specific description element that user filled in text with.
-        var descriptionTarget = $(".event-recorder");
-        console.log(descriptionTarget);
-        //we log to ensure we're grabbing the user input.
-        console.log(descriptionTarget.val());
+    var btnData = $(this).attr("data-time");
+    //console log click on THIS specific button in this class
+    console.log(btnData);
+    //descriptionTarget locates the specific description element that user filled in text with.
+    var descriptionTarget = $(btnData);
+    console.log(descriptionTarget);
+    //we log to ensure we're grabbing the user input.
+    console.log(descriptionTarget.val());
 
-        localStorage.setItem(descriptionTarget.attr("id"), JSON.stringify(descriptionTarget.val()));
-    });
+    localStorage.setItem(descriptionTarget.attr("id"), JSON.stringify(descriptionTarget.val()));
 });
 
 
