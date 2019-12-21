@@ -13,8 +13,7 @@ $(document).ready(function () {
     var update = function () {
         currentDayEl.text(moment().format('LLLL'));
 
-        // var currentTime = moment().hour();
-        var currentTime = 13;
+        var currentTime = moment().hour();
 
         // Each textbox checks the current time to adjust the class of the box from past, present, adn future accordingly
         textBoxEl.each(function (index, element) {
@@ -33,32 +32,32 @@ $(document).ready(function () {
 
     // Save button function starts here
     saveBtnEl.on("click", function (event) {
+        // Prevent the page from reverting to default
         event.preventDefault();
-
+        // create the variables for the function
+        var button = $(this);
         var btnData = $(this).attr("data-time");
-        //console log click on THIS specific button in this class
         console.log(btnData);
-        //descriptionTarget locates the specific description element that user filled in text with.
-        var descriptionTarget = $(".event-recorder" + btnData);
+        var descriptionTarget = $("#description" + btnData);
         console.log(descriptionTarget);
-        //we log to ensure we're grabbing the user input.
         console.log(descriptionTarget.val());
 
-        localStorage.setItem(descriptionTarget.attr("class"), JSON.stringify(descriptionTarget.val()));
+        // Should save input in local storage
+        localStorage.setItem(descriptionTarget.attr("id"), descriptionTarget.val());
     });
 
+    // IN THEORY, saved data would be grabbed for these elements
+    $("#description9").text(localStorage.getItem("#description9"));
+    $("#description10").text(localStorage.getItem("#description10"));
+    $("#description11").text(localStorage.getItem("#description11"));
+    $("#description12").text(localStorage.getItem("#description12"));
+    $("#description13").text(localStorage.getItem("#description13"));
+    $("#description14").text(localStorage.getItem("#description14"));
+    $("#description15").text(localStorage.getItem("#description15"));
+    $("#description16").text(localStorage.getItem("#description16"));
+    $("#description17").text(localStorage.getItem("#description17"));
 
-    $("#d9").text(localStorage.getItem("#d9"));
-    $("#d10").text(localStorage.getItem("#d10"));
-    $("#d11").text(localStorage.getItem("#d11"));
-    $("#d12").text(localStorage.getItem("#d12"));
-    $("#d13").text(localStorage.getItem("#d13"));
-    $("#d14").text(localStorage.getItem("#d14"));
-    $("#d15").text(localStorage.getItem("#d15"));
-    $("#d16").text(localStorage.getItem("#d16"));
-    $("#d17").text(localStorage.getItem("#d17"));
-
-    //clears local storage.
+    // Clears local storage... Pretty simple.
     $("#clearBtn").on("click", function () {
         localStorage.clear();
         $(".event-recorder").text("");
