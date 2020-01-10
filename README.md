@@ -1,6 +1,6 @@
 # Unit 05 Third-Party APIs Homework: Day Planner
 
-https://n0matic.github.io/Day.Planner.io/. 
+https://n0matic.github.io/Day.Planner.io/ 
 
 S AN employee with a busy schedule
 
