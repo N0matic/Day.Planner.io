@@ -47,15 +47,15 @@ $(document).ready(function () {
     });
 
     // IN THEORY, saved data would be grabbed for these elements
-    $("#description9").text(localStorage.getItem("#description9"));
-    $("#description10").text(localStorage.getItem("#description10"));
-    $("#description11").text(localStorage.getItem("#description11"));
-    $("#description12").text(localStorage.getItem("#description12"));
-    $("#description13").text(localStorage.getItem("#description13"));
-    $("#description14").text(localStorage.getItem("#description14"));
-    $("#description15").text(localStorage.getItem("#description15"));
-    $("#description16").text(localStorage.getItem("#description16"));
-    $("#description17").text(localStorage.getItem("#description17"));
+    $("#description9").text(localStorage.getItem("description9"));
+    $("#description10").text(localStorage.getItem("description10"));
+    $("#description11").text(localStorage.getItem("description11"));
+    $("#description12").text(localStorage.getItem("description12"));
+    $("#description13").text(localStorage.getItem("description13"));
+    $("#description14").text(localStorage.getItem("description14"));
+    $("#description15").text(localStorage.getItem("description15"));
+    $("#description16").text(localStorage.getItem("description16"));
+    $("#description17").text(localStorage.getItem("description17"));
 
     // Clears local storage... Pretty simple.
     $("#clearBtn").on("click", function () {
